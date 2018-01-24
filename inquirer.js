@@ -1,37 +1,42 @@
 'use strict';
 var inquirer = require('inquirer');
 
-var questions = [
-  {
-    type: 'input',
-    name: 'first_name',
-    message: "What's your first name"
-  },
-  {
-    type: 'input',
-    name: 'last_name',
-    message: "What's your last name",
-    default: function() {
-      return 'Doe';
+var questions = [{
+        type: 'input',
+        name: 'name?',
+        message: "What's your first name"
+    },
+    {
+        type: 'list',
+        name: 'Just Saying',
+        message: 'Why are you here?',
+        choices: [
+            'You brought me here',
+            'I am waiting on Uber',
+            'I live here'
+        ]
+    },
+    {
+        type: 'checkbox',
+        name: 'What is going on?',
+        message: 'Just say it',
+        choices: [
+            'I dont feel good',
+            'I wont say',
+            'Everything is cool'
+        ]
+    },
+    {
+        type: 'confirm',
+        name: 'Should I stay',
+        message: 'Should I go'
+    },
+    {
+        type: 'password',
+        name: 'myPassword',
+        message: 'What is the password'
     }
-  },
-  {
-    type: 'input',
-    name: 'phone',
-    message: "What's your phone number",
-    validate: function(value) {
-      var pass = value.match(
-        /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-      );
-      if (pass) {
-        return true;
-      }
-
-      return 'Please enter a valid phone number';
-    }
-  }
 ];
-
 inquirer.prompt(questions).then(answers => {
-  console.log(JSON.stringify(answers, null, '  '));
+    console.log(JSON.stringify(answers, null, '  '));
 });

@@ -1,7 +1,7 @@
 {
   "name": "npmcli-inquirer",
   "version": "1.0.0",
-  "description": "An interactive UI (user interface) npm package, inquirer. Helpful when building an installer, or a quick test",
+  "description": "An interactive UI npm package, inquirer. Helpful when building an installer, or a quick test",
   "main": "inquirer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/soniabradley/npmCLI-inquirer.git"
   },
-  "author": "",
+  "author": "soniabradley",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/soniabradley/npmCLI-inquirer/issues"
